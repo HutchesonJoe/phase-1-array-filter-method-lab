@@ -2,21 +2,15 @@
 function findMatching(array, name){
     let match = array.filter(element => element.toUpperCase() === name.toUpperCase())
     return match
-  }
+}
 
-  function fuzzyMatch(array, string){
-    const stringArray = Object.assign([], string)
+function fuzzyMatch(array, string){
+    console.log(string.substring(0,2))
+    return array.filter(element => element.substring(0,2).toUpperCase() === string.substring(0,2).toUpperCase())
      
-     for (let item of array){
-       let nameObject = Object.assign([],item.name)
-      let firstLetters = nameObject.slice(0,2)
-      let firstArrayLetters = stringArray.slice(0,2)
-       console.log(firstLetters)
-       console.log(firstArrayLetters)
-       if (firstLetters === firstArrayLetters){
-      return item
-     }
-    }
-    
+      
+}    
+
+function matchName(array, string){
+    return array.filter(element => element.name === string);
   }
-  
